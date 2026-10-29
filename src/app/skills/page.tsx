@@ -1,11 +1,9 @@
-import { connection } from "next/server";
 import { getContent } from "@/lib/storage";
 import type { Skill } from "@/lib/types";
 
-export const instant = false;
+export const dynamic = "force-dynamic";
 
 export default async function SkillsPage() {
-  await connection();
   const { skills } = await getContent();
 
   const groups = new Map<string, Skill[]>();

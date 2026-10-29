@@ -37,6 +37,9 @@ yarn-error.log*
 # local content storage
 /.data/
 
+# netlify local build artifacts
+/.netlify/
+
 # vercel
 .vercel
 

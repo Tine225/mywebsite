@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { connection } from "next/server";
 import { getContent } from "@/lib/storage";
 import Avatar from "@/components/Avatar";
 
-export const instant = false;
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  await connection();
   const { profile } = await getContent();
 
   return (

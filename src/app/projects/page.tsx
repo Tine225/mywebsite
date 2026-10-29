@@ -1,11 +1,9 @@
-import { connection } from "next/server";
 import { getContent } from "@/lib/storage";
 import ProjectCard from "@/components/ProjectCard";
 
-export const instant = false;
+export const dynamic = "force-dynamic";
 
 export default async function ProjectsPage() {
-  await connection();
   const { projects } = await getContent();
 
   const sorted = [...projects].sort((a, b) => {
